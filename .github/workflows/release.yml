@@ -3,6 +3,10 @@ on:
   push:
     tags:
       - "*"
+permissions:
+  contents: write
+  issues: write # Release 노트 작성을 위해
+  pull-requests: write # Release 관련 PR 필요시
 jobs:
   build:
     runs-on: ubuntu-latest
