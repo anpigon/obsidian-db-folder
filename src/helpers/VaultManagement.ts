@@ -168,9 +168,9 @@ async function obtainQueryResult(query: string): Promise<DataArray<Record<string
   }
   const arrayRecord: Record<string, Literal>[] = [];
   const headers = result.value.headers;
-  result.value.values.forEach((row: any) => {
+  result.value.values.forEach((row: Literal[]) => {
     const recordResult: Record<string, Literal> = {};
-    headers.forEach((header: any, index: any) => {
+    headers.forEach((header: string, index: number) => {
       recordResult[header] = row[index];
     })
     arrayRecord.push(recordResult);
